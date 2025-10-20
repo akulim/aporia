@@ -1,0 +1,56 @@
+import { Sparkles, Users, Calendar, Shield } from "lucide-react";
+
+const features = [
+  {
+    icon: Sparkles,
+    title: "Personalized Recommendations",
+    description: "Get event suggestions based on your interests, location, and past attendance."
+  },
+  {
+    icon: Users,
+    title: "Meet New People",
+    description: "Connect with attendees before the event and build your social network."
+  },
+  {
+    icon: Calendar,
+    title: "Easy Planning",
+    description: "Sync events to your calendar and never miss out on exciting activities."
+  },
+  {
+    icon: Shield,
+    title: "Verified Events",
+    description: "All events are verified and reviewed to ensure quality and safety."
+  }
+];
+
+export function Features() {
+  return (
+    <section className="py-20 px-6 bg-white">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="mb-4">Why Choose <span className="font-serif">aporia</span></h2>
+          <p className="max-w-2xl mx-auto text-gray-600">
+            Join thousands of students discovering and attending amazing campus events every day.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+            return (
+              <div key={index} className="text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-100 text-purple-600 mb-4">
+                  <Icon className="h-8 w-8" />
+                </div>
+                <h3 className="mb-2">{feature.title}</h3>
+                <p className="text-gray-600 text-sm">
+                  {feature.description}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
